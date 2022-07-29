@@ -14,6 +14,7 @@ function App() {
             {/*<Accordion titleValue={'Accordeon Title'} collapsed={true}/>*/}
             {/*<Accordion titleValue={'Accordeon Hello World!'} collapsed={false}/>*/}
 
+
             {/*<Rating value={0}/>*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
