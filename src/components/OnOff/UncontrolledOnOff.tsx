@@ -1,48 +1,59 @@
- import React, { useState } from 'react';
+import React, {useState} from 'react';
 import classes from './OnOff.module.css';
- import {log} from "util";
-type OnOffType = {
-    on: boolean
-    setOn:(on:boolean)=>void
+
+type PropsType = {
+    onChange: (on: boolean) => void
 }
 
+const UncontrolledOnOff = (props:PropsType) => {
 
-const OnOff = (props:OnOffType) => {
-
+    const [on, setOn] = useState(false);
     const onStyle = {
         width: "30px",
-        height:"20px",
-        border:"1px solid black",
-        display:"inline-block",
+        height: "20px",
+        border: "1px solid black",
+        display: "inline-block",
         marginLeft: "5px",
         padding: "3px",
-        backgroundColor: props.on ? "green" : "white"
+        backgroundColor: on ? "green" : "white"
 
     };
     const offStyle = {
         width: "30px",
-        height:"20px",
-        border:"1px solid black",
-        display:"inline-block",
+        height: "20px",
+        border: "1px solid black",
+        display: "inline-block",
         marginLeft: "5px",
         padding: "3px",
-        backgroundColor: !props.on ? "red" : "white"
+        backgroundColor: !on ? "red" : "white"
     };
     const indicatorStyle = {
         width: "10px",
-        height:"10px",
-        border:"1px solid black",
-        borderRadius:"50%",
-        display:"inline-block",
+        height: "10px",
+        border: "1px solid black",
+        borderRadius: "50%",
+        display: "inline-block",
         marginLeft: "5px",
-        backgroundColor: props.on ? "green" : "red"
+        backgroundColor: on ? "green" : "red"
     };
-    console.log(props.on)
+
+    const clickSetOn = () => {
+        setOn(true);
+        props.onChange(true);
+    }
+    const clickSetOff = ()=> {
+        setOn(false);
+        props.onChange(false);
+    }
+
     return (
 
         <div>
-            <div style={onStyle} onClick={()=>{props.setOn(true)}}>On</div>
-            <div style={offStyle} onClick={()=>{props.setOn(false)}}>Off</div>
+
+            <div style={onStyle} onClick={clickSetOn}>On
+            </div>
+            <div style={offStyle} onClick={clickSetOff}>Off
+            </div>
             <div style={indicatorStyle}></div>
             {/*<button className={`${props.on && classes.green}`}>on</button>*/}
             {/*<button className={`${props.off && classes.red }`}>off</button>*/}
@@ -53,4 +64,4 @@ const OnOff = (props:OnOffType) => {
         </div>
     )
 }
-export default OnOff;
+export default UncontrolledOnOff;

@@ -1,26 +1,19 @@
-import React, {useState,MouseEvent} from "react";
+import React, {useState} from "react";
 
-type RatingPropsType = {
-    // value: 0 | 1 | 2 | 3 | 4 | 5;
-}
 
-export function UncontrolledRating(props: RatingPropsType) {
+export function UncontrolledRating() {
     console.log('Rating rendering')
 
     const [rating,setRating] = useState(0)
 
-    const onClickStarHandler = (value: number) => {
-        setRating(value)
-    }
-
 
     return (
         <div>
-            <Star  selected={rating > 0} onClickStarHandler={onClickStarHandler}/>
-            <Star selected={rating > 1} onClickStarHandler={onClickStarHandler}/>
-            <Star selected={rating > 2} onClickStarHandler={onClickStarHandler}/>
-            <Star selected={rating > 3} onClickStarHandler={onClickStarHandler}/>
-            <Star selected={rating > 4} onClickStarHandler={onClickStarHandler}/>
+            <Star selected={rating > 0} setRating={()=>setRating(1)}/>
+            <Star selected={rating > 1} setRating={()=>setRating(2)}/>
+            <Star selected={rating > 2} setRating={()=>setRating(3)}/>
+            <Star selected={rating > 3} setRating={()=>setRating(4)}/>
+            <Star selected={rating > 4} setRating={()=>setRating(5)}/>
         </div>
     )
 
@@ -29,19 +22,13 @@ export function UncontrolledRating(props: RatingPropsType) {
 
 type StarPropsType = {
     selected: boolean
-    onClickStarHandler: (value:number)=> void
+    setRating: ()=> void
 }
 
 export function Star(props: StarPropsType) {
-    console.log(props)
 
 
-
-
-
-    return (
-        <span onClick={()=>props.onClickStarHandler(2)}>{props.selected ? <b>Star</b> : 'Star'}</span>
-    )
+    return <span onClick={props.setRating}>{props.selected ? <b>Star </b> : 'Star '}</span>
 
 
 
