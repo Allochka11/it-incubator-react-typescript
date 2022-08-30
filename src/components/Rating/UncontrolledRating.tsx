@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 export function UncontrolledRating() {
-    console.log('Rating rendering')
+    // console.log('Rating rendering')
 
     const [rating,setRating] = useState(0)
 

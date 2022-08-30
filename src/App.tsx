@@ -6,6 +6,10 @@ import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion"
 import Accordion from "./components/Accordion/Accordion";
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
+import {Input} from "./components/Input/UncontrolledInput";
+import {ControlledCheckbox} from "./components/Input/ControlledCheckbox";
+import {ControlledSelect} from "./components/Input/ControlledSelect";
+import {ControlledInput} from "./components/Input/ControlledInput";
 
 
 function App() {
@@ -25,8 +29,11 @@ function App() {
             <Accordion titleValue={"Accordeon Title"} value={accordion} setAccordion={()=>setAccordion(!accordion)}/>
             <OnOff on={on} setOn={setOn}/>
             <UncontrolledOnOff onChange={setOn}/> {on.toString()}
-
             <UncontrolledAccordion titleValue={'Accordeon Title'}/>
+            <Input/>
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
         </div>
 
     );

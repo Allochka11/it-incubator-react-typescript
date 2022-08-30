@@ -37,7 +37,7 @@ const OnOff = (props:OnOffType) => {
         marginLeft: "5px",
         backgroundColor: props.on ? "green" : "red"
     };
-    console.log(props.on)
+    // console.log(props.on)
     return (
 
         <div>
