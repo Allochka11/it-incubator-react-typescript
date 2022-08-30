@@ -1,0 +1,19 @@
+.select {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    background: antiquewhite;
+    align-items: center;
+    border: 1px solid #ea6f0a;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.select_items {
+    padding: 5px;
+}
+.select_item {
+    padding: 5px;
+    border-top: 1px solid black;
+}

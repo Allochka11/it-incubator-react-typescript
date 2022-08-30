@@ -10,6 +10,7 @@ import {Input} from "./components/Input/UncontrolledInput";
 import {ControlledCheckbox} from "./components/Input/ControlledCheckbox";
 import {ControlledSelect} from "./components/Input/ControlledSelect";
 import {ControlledInput} from "./components/Input/ControlledInput";
+import {Select} from "./components/Select/Select";
 
 
 function App() {
@@ -21,18 +22,30 @@ function App() {
     const [accordion, setAccordion] = useState<boolean>(false)
     const [on,setOn] = useState<boolean>(true);
 
+    const onClick = (id:string) =>{
+        alert(`User with ${id} should be Happy!`)
+    }
+    const [parentValue, setParentValue] = useState<undefined| string>('Select')
+
+    const onChangeHandler = (value:string) => {
+        setParentValue(value)
+    }
     return (
         <div className="App">
 
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating/>
-            <Accordion titleValue={"Accordeon Title"} value={accordion} setAccordion={()=>setAccordion(!accordion)}/>
-            <OnOff on={on} setOn={setOn}/>
-            <UncontrolledOnOff onChange={setOn}/> {on.toString()}
-            <UncontrolledAccordion titleValue={'Accordeon Title'}/>
-            <Input/>
-            <ControlledInput/>
-            <ControlledCheckbox/>
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<Accordion titleValue={"Menu"} value={accordion} setAccordion={()=>setAccordion(!accordion)} items={[{title:'Alla', value:1}, {title:'Vladymyr', value:2}, {title:'Markiza', value:3}]}*/}
+            {/*onClick={(id)=>onClick(id)}*/}
+
+            {/*/>*/}
+            {/*<OnOff on={on} setOn={setOn}/>*/}
+            {/*<UncontrolledOnOff onChange={setOn}/> {on.toString()}*/}
+            {/*<UncontrolledAccordion titleValue={'Accordeon Title'}/>*/}
+            {/*<Input/>*/}
+            {/*<ControlledInput/>*/}
+            {/*<ControlledCheckbox/>*/}
+            <Select value={parentValue} onChangeItem={(value)=>onChangeHandler(value)} items={[{title:'Alla', value:1}, {title:'Vladymyr', value:2}, {title:'Markiza', value:3}]}/>
             <ControlledSelect/>
         </div>
 

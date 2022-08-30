@@ -13,7 +13,6 @@ export const ControlledSelect = (props: ControlledSelectType) => {
             <option value="">none</option>
             <option value="1">Kiev</option>
             <option value="2">Madagascar</option>
-
         </select>
     );
 };
