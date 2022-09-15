@@ -23,7 +23,7 @@ export const Select = (props: SelectType) => {
         <div className={'select'}>
             <div onClick={toggle}>{props.value}</div>
             <div style={!open ? {display: "none"} : {display: "block"}} className={'select_items'}>
-                {props.items.map(i => <div className={'select_item'} onClick={()=>props.onChangeItem(i.title)}>{i.title}</div>)}</div>
+                {props.items.map((i, index )=> <div key={index} className={'select_item'} onClick={()=>props.onChangeItem(i.title)}>{i.title}</div>)}</div>
         </div>
     );
 };
