@@ -2,13 +2,15 @@ import React, {ChangeEvent, useState} from "react";
 
 type ControlledInput = {}
 
-export const ControlledInput = (props: ControlledInput) => {
+const ControlledInputMemo = (props: ControlledInput) => {
     const [parentValue, setParentValue] = useState('')
-    const onChange = (e:ChangeEvent<HTMLInputElement>)=>setParentValue(e.currentTarget.value);
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => setParentValue(e.currentTarget.value);
 
-    return(
+    return (
         <div>
             <input type="text" value={parentValue} onChange={onChange}/>
         </div>
     );
 };
+
+export const ControlledInput = React.memo(ControlledInputMemo);

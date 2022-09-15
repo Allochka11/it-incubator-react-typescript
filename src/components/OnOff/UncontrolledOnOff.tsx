@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import classes from './OnOff.module.css';
 
 type PropsType = {
     onChange: (on: boolean) => void
 }
 
-const UncontrolledOnOff = (props:PropsType) => {
+const UncontrolledOnOffMemo = (props: PropsType) => {
 
     const [on, setOn] = useState(false);
     const onStyle = {
@@ -41,7 +40,7 @@ const UncontrolledOnOff = (props:PropsType) => {
         setOn(true);
         props.onChange(true);
     }
-    const clickSetOff = ()=> {
+    const clickSetOff = () => {
         setOn(false);
         props.onChange(false);
     }
@@ -64,4 +63,5 @@ const UncontrolledOnOff = (props:PropsType) => {
         </div>
     )
 }
-export default UncontrolledOnOff;
+
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffMemo);

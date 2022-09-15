@@ -1,49 +1,56 @@
-
 import React from "react";
+
 type ItemType = {
-    title:string
+    title: string
     value: any
 }
 
 type AccordionPropsType = {
     titleValue: string,
-    setAccordion: ()=> void
-    value:boolean
+    setAccordion: () => void
+    value: boolean
     items: ItemType[]
-    onClick:(value:any)=>void
+    onClick: (value: any) => void
 }
 
-function Accordion(props: AccordionPropsType) {
+function AccordionMemo(props: AccordionPropsType) {
     return (<>
 
         <AccordionTitle title={props.titleValue} setAccordion={props.setAccordion}/>
-        {!props.value && <AccordionBody items={props.items} onClick={props.onClick} /> }
+        {!props.value && <AccordionBody items={props.items} onClick={props.onClick}/>}
     </>)
 }
 
+export const Accordion = React.memo(AccordionMemo);
+
+
 type AccordionTitlePropsType = {
     title: string
-    setAccordion: ()=> void
+    setAccordion: () => void
 }
 
 
-
-
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleMemo(props: AccordionTitlePropsType) {
     return <h3 onClick={props.setAccordion}>{props.title}</h3>
 }
+
+export const AccordionTitle = React.memo(AccordionTitleMemo);
+
+
 type AccordionBodyPropsType = {
     items: ItemType[]
-    onClick:(value:any)=>void
+    onClick: (value: any) => void
 }
 
-function AccordionBody(props:AccordionBodyPropsType) {
+function AccordionBodyMemo(props: AccordionBodyPropsType) {
 
     return (
-        <ul >
-            {props.items.map((i, index)=><li onClick={()=>{props.onClick(i.value)}} key={index}>{i.title}</li>)}
+        <ul>
+            {props.items.map((i, index) => <li onClick={() => {
+                props.onClick(i.value)
+            }} key={index}>{i.title}</li>)}
         </ul>
     )
 }
 
-export default Accordion;
+export const AccordionBody = React.memo(AccordionBodyMemo);

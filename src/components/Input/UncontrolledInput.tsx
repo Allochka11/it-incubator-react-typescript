@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 
 type InputType = {}
 
-export const Input = (props: InputType) => {
+export const InputMemo = (props: InputType) => {
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const save = () => {
@@ -11,7 +11,7 @@ export const Input = (props: InputType) => {
         setValue(el.value)
     }
 
-    return(
+    return (
         <div>
             <input type="text" ref={inputRef}/>
             <button onClick={save}>save</button>
@@ -20,3 +20,5 @@ export const Input = (props: InputType) => {
         </div>
     );
 };
+
+export const Input = React.memo(InputMemo);
