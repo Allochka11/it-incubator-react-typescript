@@ -13,6 +13,8 @@ import {ControlledInput} from "./components/Input/ControlledInput";
 import {Select} from "./components/Select/Select";
 import {Select2} from "./components/Select/Select2";
 import {Example1} from "./components/ReactMemo";
+import {UseMemo} from "./components/UseMemo";
+import {HelperSelect} from "./components/Select/HelperSelect";
 
 
 function App() {
@@ -26,6 +28,11 @@ function App() {
     }
     const [value, setValue] = useState<undefined | string>('Select')
     const [value2, setValue2] = useState<null | string>(null)
+    const [city, setCity] = useState([
+        {value: '0', title: 'Hlukhiv'},
+        {value: '1', title: 'Sumy'},
+        {value: '2', title: 'Kyiv'}
+    ])
 
     const onChangeHandler = (value: string) => {
         setValue(value)
@@ -35,40 +42,39 @@ function App() {
     }
     return (
         <div className="App">
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating/>
-            <Accordion titleValue={"Menu"} value={accordion} setAccordion={() => setAccordion(!accordion)}
-                       items={[{title: 'Alla', value: 1}, {title: 'Vladymyr', value: 2}, {title: 'Markiza', value: 3}]}
-                       onClick={(id) => onClick(id)}
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating/>*/}
+            {/*<Accordion titleValue={"Menu"} value={accordion} setAccordion={() => setAccordion(!accordion)}*/}
+            {/*           items={[{title: 'Alla', value: 1}, {title: 'Vladymyr', value: 2}, {title: 'Markiza', value: 3}]}*/}
+            {/*           onClick={(id) => onClick(id)}*/}
 
-            />
-            <OnOff on={on} setOn={setOn}/>
-            <UncontrolledOnOff onChange={setOn}/> {on.toString()}
-            <UncontrolledAccordion titleValue={'Accordeon Title'}/>
-            <Input/>
-            <ControlledInput/>
-            <ControlledCheckbox/>
-            {/*<Select value={parentValue} onChangeItem={(value)=>onChangeHandler(value)} items={[{title:'Alla', value:1}, {title:'Vladymyr', value:2}, {title:'Markiza', value:3}]}/>*/}
-            <ControlledSelect/>
-            <Select2
-                items={[
-                    {value: '0', title: 'Hlukhiv'},
-                    {value: '1', title: 'Sumy'},
-                    {value: '2', title: 'Kyiv'}
-                ]}
-                onChangeItem={(value) => onChangeHandler(value)}
-                value={value}/>
-            without value
-            <Select2
-                items={[
-                    {value: '0', title: 'Alla'},
-                    {value: '1', title: 'Vladymyr'},
-                    {value: '2', title: 'Markisa'}
-                ]}
-                value={value2}
-                onChangeItem={(value) => onChangeHandler2(value)}
-            />
-            <Example1/>
+            {/*/>*/}
+            {/*<OnOff on={on} setOn={setOn}/>*/}
+            {/*<UncontrolledOnOff onChange={setOn}/> {on.toString()}*/}
+            {/*<UncontrolledAccordion titleValue={'Accordeon Title'}/>*/}
+            {/*<Input/>*/}
+            {/*<ControlledInput/>*/}
+            {/*<ControlledCheckbox/>*/}
+            {/*/!*<Select value={parentValue} onChangeItem={(value)=>onChangeHandler(value)} items={[{title:'Alla', value:1}, {title:'Vladymyr', value:2}, {title:'Markiza', value:3}]}/>*!/*/}
+            {/*<ControlledSelect/>*/}
+            {/*<Select2*/}
+            {/*    items={city}*/}
+            {/*    onChangeItem={(value) => onChangeHandler(value)}*/}
+            {/*    value={value}/>*/}
+            {/*without value*/}
+            {/*<Select2*/}
+            {/*    items={[*/}
+            {/*        {value: '0', title: 'Alla'},*/}
+            {/*        {value: '1', title: 'Vladymyr'},*/}
+            {/*        {value: '2', title: 'Markisa'}*/}
+            {/*    ]}*/}
+            {/*    value={value2}*/}
+            {/*    onChangeItem={(value) => onChangeHandler2(value)}*/}
+            {/*/>*/}
+            {/*<Example1/>*/}
+            {/*<UseMemo/>*/}
+            <HelperSelect/>
+
         </div>
 
     );

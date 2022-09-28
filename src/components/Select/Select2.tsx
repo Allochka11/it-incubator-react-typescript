@@ -14,6 +14,8 @@ type ItemType = {
 
 export const Select2Memo = (props: Select2Type) => {
 
+    // console.log('select')
+
     const [active, setActive] = useState(false);
     //value того на чем сейчас hover
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value);
@@ -50,6 +52,8 @@ export const Select2Memo = (props: Select2Type) => {
             toggleItems();
         }
     }
+
+    console.log(props.items)
 
 
     return (
