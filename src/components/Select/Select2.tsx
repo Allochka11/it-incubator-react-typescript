@@ -53,7 +53,7 @@ export const Select2Memo = (props: Select2Type) => {
         }
     }
 
-    console.log(props.items)
+    // console.log(props.items)
 
 
     return (

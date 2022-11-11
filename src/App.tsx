@@ -15,6 +15,7 @@ import {Select2} from "./components/Select/Select2";
 import {Example1} from "./components/ReactMemo";
 import {UseMemo} from "./components/UseMemo";
 import {HelperSelect} from "./components/Select/HelperSelect";
+import {LikeUseCallback} from "./components/UseCallback";
 
 
 function App() {
@@ -73,20 +74,21 @@ function App() {
             {/*/>*/}
             {/*<Example1/>*/}
             {/*<UseMemo/>*/}
-            <HelperSelect/>
+            {/*<HelperSelect/>*/}
+            <LikeUseCallback/>
 
         </div>
 
     );
 }
 
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    console.log('Page title rendering')
-    return <h1>{props.title}</h1>
-}
+// type PageTitlePropsType = {
+//     title: string
+// }
+//
+// function PageTitle(props: PageTitlePropsType) {
+//     console.log('Page title rendering')
+//     return <h1>{props.title}</h1>
+// }
 
 export default App;
