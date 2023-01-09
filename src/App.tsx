@@ -16,6 +16,7 @@ import {Example1} from "./components/ReactMemo";
 import {UseMemo} from "./components/UseMemo";
 import {HelperSelect} from "./components/Select/HelperSelect";
 import {LikeUseCallback} from "./components/UseCallback";
+import {Example2} from "./components/UseStateMemo";
 
 
 function App() {
@@ -75,8 +76,8 @@ function App() {
             {/*<Example1/>*/}
             {/*<UseMemo/>*/}
             {/*<HelperSelect/>*/}
-            <LikeUseCallback/>
-
+            {/*<LikeUseCallback/>*/}
+<Example2/>
         </div>
 
     );
