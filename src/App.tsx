@@ -18,6 +18,7 @@ import {HelperSelect} from "./components/Select/HelperSelect";
 import {LikeUseCallback} from "./components/UseCallback";
 import {Example2} from "./components/UseStateMemo";
 import {UseEffectExample} from "./components/UseEffectExample";
+import {Clock} from "./components/Clock/Clock";
 
 
 function App() {
@@ -79,7 +80,8 @@ function App() {
             {/*<HelperSelect/>*/}
             {/*<LikeUseCallback/>*/}
 {/*<Example2/>*/}
-            <UseEffectExample/>
+{/*            <UseEffectExample/>*/}
+            <Clock/>
         </div>
 
     );

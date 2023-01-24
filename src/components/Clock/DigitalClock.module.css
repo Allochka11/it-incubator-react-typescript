@@ -1,0 +1,12 @@
+.clock {
+    width: 100px;
+    padding: 10px;
+    background-color: #3091e1;
+    border: 3px solid #168093;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    text-shadow: 6px -1px 6px #ededed;
+    box-shadow: inset 0px 0px 6px 3px #e8eeee;
+}

@@ -1,6 +1,6 @@
 .App {
-    width: 600px;
-    margin: 20px auto;
-
+ display: flex;
+    justify-content: center;
+    margin-top: 50px;
 
 }
