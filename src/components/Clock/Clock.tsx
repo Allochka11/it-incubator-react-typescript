@@ -10,24 +10,20 @@ type ClockType = {
 const get2DigreeTime = (time:number) => time < 10 ? '0' + time : time;
 
 export const Clock = (props: ClockType) => {
-
     const [time, setTime] = useState(new Date());
 
-    useEffect(()=>{
+    useEffect(() => {
 
         let id = setInterval(()=>{
-            console.log('tick', id)
-            setTime(new Date())
+            setTime(new Date());
 
-        },1000);
-
-        return ()=>{
-            clearInterval(id);
+        },1000)
+        return ()=> {
+            clearInterval(id)
         }
 
-    },[])
+    },[]);
 
-    console.log(props)
     return(
 
 
