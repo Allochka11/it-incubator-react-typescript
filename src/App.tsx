@@ -19,6 +19,7 @@ import {LikeUseCallback} from "./components/UseCallback";
 import {Example2} from "./components/UseStateMemo";
 import {UseEffectExample} from "./components/UseEffectExample";
 import {Clock} from "./components/Clock/Clock";
+import {Ajax} from "./components/Ajax";
 
 
 function App() {
@@ -81,7 +82,8 @@ function App() {
             {/*<LikeUseCallback/>*/}
 {/*<Example2/>*/}
 {/*            <UseEffectExample/>*/}
-            <Clock/>
+            <Clock mode={'analog'}/>
+            {/*<Ajax/>*/}
         </div>
 
     );
